@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="@color/colorPrimary"
+    >
+    <LinearLayout
+        android:id="@+id/ll_fl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:baselineAligned="false" >
+        <FrameLayout
+            android:id="@+id/fl_main"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:orientation="vertical" >
+        </FrameLayout>
+    </LinearLayout>
+    <RadioGroup
+        android:paddingTop="10dp"
+        android:id="@+id/radioGroup_home"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:background="@drawable/bg_tab"
+        >
+
+        <RadioButton
+            android:paddingTop="3dp"
+            android:id="@+id/rbt_shouye"
+            android:text="@string/shouye"
+            android:checked="true"
+            style="@style/mainRadioButton"
+            android:drawableTop="@drawable/main_bottom_rb_home"
+            />
+        <RadioButton
+            android:paddingTop="3dp"
+            android:id="@+id/rbt_shebei"
+            android:text="@string/shebei"
+            style="@style/mainRadioButton"
+            android:drawableTop="@drawable/main_bottom_rb_shebei"
+            />
+        <RadioButton
+            android:paddingTop="3dp"
+            android:id="@+id/rbt_guzhang"
+            android:text="@string/guzhang"
+            style="@style/mainRadioButton"
+            android:drawableTop="@drawable/main_bottom_rb_guzhang"
+            />
+        <RadioButton
+            android:paddingTop="3dp"
+            android:text="@string/wode"
+            android:id="@+id/rbt_wode"
+            style="@style/mainRadioButton"
+            android:drawableTop="@drawable/main_bottom_rb_me"
+            />
+    </RadioGroup>
+</LinearLayout>

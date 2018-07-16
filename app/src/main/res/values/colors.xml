@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0B0F33</color>
+    <color name="colorPrimaryDark">#0B0F33</color>
+    <color name="colorAccent">#0B0F33</color>
+    <color name="progressyellow">#E5D739</color>
+    <color name="progresslan_bg">#0F1552</color>
+</resources>

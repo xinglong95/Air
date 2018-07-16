@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="130dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_chexianghao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="A-01"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:visibility="invisible"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/chewei">
+
+        <LinearLayout
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_kongtiao1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:drawableTop="@drawable/icon_kongtiao_w"
+                android:gravity="center"
+                android:text="8"
+                android:drawablePadding="2dp"
+                android:textColor="@color/white"
+                android:textSize="8sp"
+                android:visibility="invisible"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="140dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            >
+
+            <TextView
+                android:id="@+id/tv_kongtiao2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_kongtiao2"
+                android:button="@null"
+                android:gravity="center"
+                android:text="空调机组"
+                android:textColor="@color/white"
+                android:drawableTop="@drawable/icon_kongtiao_w"
+                android:textSize="8sp"
+                android:drawablePadding="2dp"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

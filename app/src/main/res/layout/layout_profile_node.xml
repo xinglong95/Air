@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:paddingLeft="10dp"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/line_groupchagn"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp">
+        <TextView
+            android:id="@+id/line_groupquanshang"
+            android:layout_weight="1"
+            android:background="#1c3763"
+            android:layout_width="1dp"
+            android:layout_height="0dp" />
+        <TextView
+            android:id="@+id/line_groupquanxia"
+            android:layout_weight="1"
+            android:background="#1c3763"
+            android:layout_width="1dp"
+            android:layout_height="0dp" />
+    </LinearLayout>
+    <TextView
+        android:layout_gravity="center"
+        android:background="#1c3763"
+        android:layout_width="25dp"
+        android:layout_height="1dp" />
+<RelativeLayout
+    android:id="@+id/rl_checkbox"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/line_groupshang"
+        android:layout_weight="1"
+        android:background="#1c3763"
+        android:layout_width="1dp"
+        android:layout_height="0dp" />
+        <TextView
+            android:id="@+id/line_groupxia"
+            android:layout_weight="1"
+            android:background="#1c3763"
+            android:layout_width="1dp"
+            android:layout_height="0dp" />
+    </LinearLayout>
+    <CheckBox
+        android:button="@drawable/checkbox_xiangmuxuanzhogn"
+        android:focusable="false"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/cb_xuanze"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
+    <TextView
+        android:paddingLeft="20dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/bg_sanjixuanzekuang"
+        android:layout_gravity="center"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/icon_shi"
+        android:layout_centerVertical="true"
+        android:textSize="14sp"
+        android:textColor="#7c92ff"
+        android:layout_toRightOf="@+id/rl_checkbox"
+        android:id="@+id/tv_sheng"
+        android:layout_width="240dp"
+        android:layout_height="25dp"
+        android:gravity="center_vertical"
+        />
+</LinearLayout>
