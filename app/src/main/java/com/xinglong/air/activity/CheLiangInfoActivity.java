@@ -61,7 +61,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * 第一次提交
+ * 第二次提交
  */
 public class CheLiangInfoActivity extends RootActivity implements RadioGroup.OnCheckedChangeListener {
 
