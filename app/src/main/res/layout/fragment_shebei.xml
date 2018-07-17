@@ -96,7 +96,7 @@
                     android:layout_alignParentTop="true"
                     android:text="空调当前状态"
                     android:layout_marginTop="5dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/shebeilan"
                     android:textSize="13sp"
                     />
                 <RadioGroup
@@ -118,7 +118,7 @@
                         android:button="@drawable/select_yellow_checkbox"
                         android:textSize="12sp"
                         android:paddingLeft="5dp"
-                        android:textColor="@color/white"
+                        android:textColor="@color/shebeilan"
                         />
                     <RadioButton
                         android:id="@+id/rbt_tingzhi"
@@ -129,7 +129,7 @@
                         android:button="@drawable/select_yellow_checkbox"
                         android:textSize="12sp"
                         android:paddingLeft="5dp"
-                        android:textColor="@color/white"
+                        android:textColor="@color/shebeilan"
                         />
                 </RadioGroup>
             </RelativeLayout>
@@ -149,7 +149,7 @@
                     android:layout_alignParentTop="true"
                     android:text="故障状态"
                     android:layout_marginTop="5dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/shebeilan"
                     android:textSize="13sp"
                     />
                 <RadioGroup
@@ -171,7 +171,7 @@
                         android:button="@drawable/select_yellow_checkbox"
                         android:textSize="12sp"
                         android:paddingLeft="5dp"
-                        android:textColor="@color/white"
+                        android:textColor="@color/shebeilan"
                         />
                     <RadioButton
                         android:id="@+id/rbt_zhengchang"
@@ -182,7 +182,7 @@
                         android:button="@drawable/select_yellow_checkbox"
                         android:textSize="12sp"
                         android:paddingLeft="5dp"
-                        android:textColor="@color/white"
+                        android:textColor="@color/shebeilan"
                         />
                 </RadioGroup>
             </RelativeLayout>
@@ -196,13 +196,40 @@
             android:layout_marginTop="15dp"
             android:orientation="vertical"
             >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                >
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/liebiaolan"
+                    android:gravity="center_vertical|left"
+                    android:text="车辆"
+                    android:layout_marginLeft="50dp"
+                    />
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/liebiaolan"
+                    android:gravity="center_vertical|right"
+                    android:text="操作"
+                    android:layout_marginRight="50dp"
+                    />
+            </LinearLayout>
             <ListView
                 android:id="@+id/lv_liechelist"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 >
-
             </ListView>
 
         </LinearLayout>

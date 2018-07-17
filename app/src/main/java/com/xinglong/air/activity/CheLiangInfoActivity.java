@@ -59,6 +59,7 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * 第三次提交
@@ -73,6 +74,8 @@ public class CheLiangInfoActivity extends RootActivity implements RadioGroup.OnC
     NoScrollViewPager vpZhuangkuang;
     @Bind(R.id.tv_kongtiaozhuangkuang)
     TextView tv_kongtiaozhuangkuang;
+    @Bind(R.id.iv_back)
+    ImageView ivBack;
 
     private GalleryAdapter mAdapter;
     private List<ChartDatasBean> chartDatasBeans;
@@ -223,8 +226,8 @@ public class CheLiangInfoActivity extends RootActivity implements RadioGroup.OnC
         viewHolder_kongzhi.tvHuifenghfa.setText(huifengfakaidu + "s");
         viewHolder_kongzhi.tvYasuojipinlv.setText(yasuojipinlv + "HZ");
         viewHolder_kongzhi.tvPengzhangfa.setText(pengzhangfakaidu + "P");
-        if (MTextUtils.notEmpty(beanall.getModeOne())){
-            switch (beanall.getModeOne()){
+        if (MTextUtils.notEmpty(beanall.getModeOne())) {
+            switch (beanall.getModeOne()) {
                 case "0":
                 case "1":
                 case "2":
@@ -242,8 +245,8 @@ public class CheLiangInfoActivity extends RootActivity implements RadioGroup.OnC
                     break;
             }
         }
-        if (MTextUtils.notEmpty(beanall.getModeOne())){
-            switch (beanall.getModeOne()){
+        if (MTextUtils.notEmpty(beanall.getModeOne())) {
+            switch (beanall.getModeOne()) {
                 case "0":
                 case "1":
                 case "2":
@@ -268,7 +271,9 @@ public class CheLiangInfoActivity extends RootActivity implements RadioGroup.OnC
 
 
     }
-    KongTiaoShiShiBean.DataBean beanall=new KongTiaoShiShiBean.DataBean();
+
+    KongTiaoShiShiBean.DataBean beanall = new KongTiaoShiShiBean.DataBean();
+
     /**
      * 初始化实时数据
      */
@@ -281,12 +286,12 @@ public class CheLiangInfoActivity extends RootActivity implements RadioGroup.OnC
         viewHolder_shiShi.tvShineishidu.setText(bean.getHumidityValue_A() + "℃");
         viewHolder_shiShi.tvNongdu.setText(bean.getCO2_Value() + "ppm");
         viewHolder_shiShi.tvPm.setText(bean.getPM25() + "ug/m3");
-        fengsu=Integer.parseInt(MTextUtils.isEmpty(bean.getRunningFrequencyInFan()) ? "" : bean.getRunningFrequencyInFan());
-        wendu=Integer.parseInt(MTextUtils.isEmpty(bean.getINAIR_T_10AD_2_A()) ? "" : bean.getINAIR_T_10AD_2_A());
-        xinfengfakaidu=Integer.parseInt(MTextUtils.isEmpty(bean.getFreshValveNow()) ? "" : bean.getFreshValveNow());
-        huifengfakaidu=Integer.parseInt(MTextUtils.isEmpty(bean.getReflowValveNow()) ? "" : bean.getReflowValveNow());
-        yasuojipinlv=Integer.parseInt(MTextUtils.isEmpty(bean.getRunningFrequencyCompA()) ? "" : bean.getRunningFrequencyCompA());
-        pengzhangfakaidu=Integer.parseInt(MTextUtils.isEmpty(bean.getV1_NOW_STATE_RDIV256()) ? "" : bean.getV1_NOW_STATE_RDIV256());
+        fengsu = Integer.parseInt(MTextUtils.isEmpty(bean.getRunningFrequencyInFan()) ? "" : bean.getRunningFrequencyInFan());
+        wendu = Integer.parseInt(MTextUtils.isEmpty(bean.getINAIR_T_10AD_2_A()) ? "" : bean.getINAIR_T_10AD_2_A());
+        xinfengfakaidu = Integer.parseInt(MTextUtils.isEmpty(bean.getFreshValveNow()) ? "" : bean.getFreshValveNow());
+        huifengfakaidu = Integer.parseInt(MTextUtils.isEmpty(bean.getReflowValveNow()) ? "" : bean.getReflowValveNow());
+        yasuojipinlv = Integer.parseInt(MTextUtils.isEmpty(bean.getRunningFrequencyCompA()) ? "" : bean.getRunningFrequencyCompA());
+        pengzhangfakaidu = Integer.parseInt(MTextUtils.isEmpty(bean.getV1_NOW_STATE_RDIV256()) ? "" : bean.getV1_NOW_STATE_RDIV256());
         setKongZhiText();
     }
 
@@ -306,9 +311,10 @@ public class CheLiangInfoActivity extends RootActivity implements RadioGroup.OnC
                 TimePickerView pvTime = new TimePickerBuilder(me, new OnTimeSelectListener() {
                     @Override
                     public void onTimeSelect(Date date, View v) {
-                        viewHolder_lishi.TvKaiShiShijian.setText(MyTimeUtils.toString(date,new SimpleDateFormat("yyyy-MM-dd")));
+                        viewHolder_lishi.TvKaiShiShijian.setText(MyTimeUtils.toString(date, new SimpleDateFormat("yyyy-MM-dd")));
                     }
                 }).setSubCalSize(15)
+                        .setType(new boolean[]{true, true, true, true, true, false})// 默认全部显示，年月日时分秒
                         .setTitleColor(Color.BLACK)//标题文字颜色
                         .setSubmitColor(getResources().getColor(R.color.white))//确定按钮文字颜色
                         .setCancelColor(getResources().getColor(R.color.white))//取消按钮文字颜色
@@ -323,9 +329,10 @@ public class CheLiangInfoActivity extends RootActivity implements RadioGroup.OnC
                 TimePickerView pvTime = new TimePickerBuilder(me, new OnTimeSelectListener() {
                     @Override
                     public void onTimeSelect(Date date, View v) {
-                        viewHolder_lishi.TvJieShuShiJian.setText(MyTimeUtils.toString(date,new SimpleDateFormat("yyyy-MM-dd")));
+                        viewHolder_lishi.TvJieShuShiJian.setText(MyTimeUtils.toString(date, new SimpleDateFormat("yyyy-MM-dd")));
                     }
                 }).setSubCalSize(15)
+                        .setType(new boolean[]{true, true, true, true, true, false})// 默认全部显示，年月日时分秒
                         .setTitleColor(Color.BLACK)//标题文字颜色
                         .setSubmitColor(getResources().getColor(R.color.white))//确定按钮文字颜色
                         .setCancelColor(getResources().getColor(R.color.white))//取消按钮文字颜色
@@ -337,10 +344,10 @@ public class CheLiangInfoActivity extends RootActivity implements RadioGroup.OnC
         viewHolder_lishi.tVchaxuntiaojian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final List<String> chaxuntiaojian= Arrays.asList(new String[]{
-                        "设定温度","室内温度","室外温度","送风温度","室内湿度","新风阀_A","新风阀_B","回风阀_A","回风阀_B"
-                        ,"内热交_A", "外热交_A","压机频_A","排气温_A","膨胀阀_A","高压值_A","低压值_A"
-                        ,"内热交_B", "外热交_B","压机频_B","排气温_B","膨胀阀_B","高压值_B","低压值_B"
+                final List<String> chaxuntiaojian = Arrays.asList(new String[]{
+                        "设定温度", "室内温度", "室外温度", "送风温度", "室内湿度", "新风阀_A", "新风阀_B", "回风阀_A", "回风阀_B"
+                        , "内热交_A", "外热交_A", "压机频_A", "排气温_A", "膨胀阀_A", "高压值_A", "低压值_A"
+                        , "内热交_B", "外热交_B", "压机频_B", "排气温_B", "膨胀阀_B", "高压值_B", "低压值_B"
                 });
                 OptionsPickerView pvOptions = new OptionsPickerBuilder(me, new OnOptionsSelectListener() {
                     @Override
@@ -422,7 +429,7 @@ public class CheLiangInfoActivity extends RootActivity implements RadioGroup.OnC
             @Override
             public void onSuccess(KongTiaoShiShiBean result) {
                 if (null != result.getData()) {
-                    beanall=result.getData();
+                    beanall = result.getData();
                     initShiShiData(result.getData());
                 }
             }
@@ -572,11 +579,18 @@ public class CheLiangInfoActivity extends RootActivity implements RadioGroup.OnC
         }
 
     }
+
+    @OnClick(R.id.iv_back)
+    public void onViewClicked() {
+        me.finish();
+    }
+
     public enum ITEM_TYPE {
         CHETOU,
         CHEXIANG,
         CHEWEI
     }
+
     /**
      * 车辆选择适配器
      */
@@ -594,26 +608,32 @@ public class CheLiangInfoActivity extends RootActivity implements RadioGroup.OnC
             public ViewHolder_CheXiang(View arg0) {
                 super(arg0);
             }
+
             TextView mTxt_1;
             TextView mTxt_2;
             TextView mTxt_cheliang;
         }
+
         public class ViewHolder_CheTou extends RecyclerView.ViewHolder {
             public ViewHolder_CheTou(View arg0) {
                 super(arg0);
             }
+
             TextView mTxt_1;
             TextView mTxt_2;
             TextView mTxt_cheliang;
         }
+
         public class ViewHolder_CheWei extends RecyclerView.ViewHolder {
             public ViewHolder_CheWei(View arg0) {
                 super(arg0);
             }
+
             TextView mTxt_1;
             TextView mTxt_2;
             TextView mTxt_cheliang;
         }
+
         @Override
         public int getItemCount() {
             return mDatas.size();
@@ -632,7 +652,7 @@ public class CheLiangInfoActivity extends RootActivity implements RadioGroup.OnC
 //                viewHolder.mTxt_2 = view.findViewById(R.id.tv_kongtiao2);
 //                viewHolder.mTxt_cheliang = view.findViewById(R.id.tv_chexianghao);
                 return viewHolder;
-            } else if(i == ITEM_TYPE.CHEWEI.ordinal()){
+            } else if (i == ITEM_TYPE.CHEWEI.ordinal()) {
                 View view = mInflater.inflate(R.layout.adapter_kongtiaoxuanze_chewei,
                         viewGroup, false);
                 ViewHolder_CheWei viewHolder = new ViewHolder_CheWei(view);
@@ -652,13 +672,13 @@ public class CheLiangInfoActivity extends RootActivity implements RadioGroup.OnC
         }
 
         @Override
-        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder,final int i) {
-            if (viewHolder instanceof ViewHolder_CheTou){
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, final int i) {
+            if (viewHolder instanceof ViewHolder_CheTou) {
 
-            }else if(viewHolder instanceof ViewHolder_CheWei){
+            } else if (viewHolder instanceof ViewHolder_CheWei) {
 
-            }else{
-                ViewHolder_CheXiang viewHolder_cheXiang= (ViewHolder_CheXiang) viewHolder;
+            } else {
+                ViewHolder_CheXiang viewHolder_cheXiang = (ViewHolder_CheXiang) viewHolder;
                 ChangePic(viewHolder_cheXiang.mTxt_1, mDatas.get(i).getChildren().get(0).isSelect());
                 ChangePic(viewHolder_cheXiang.mTxt_2, mDatas.get(i).getChildren().get(1).isSelect());
                 viewHolder_cheXiang.mTxt_cheliang.setText(mDatas.get(i).getName());
@@ -696,12 +716,12 @@ public class CheLiangInfoActivity extends RootActivity implements RadioGroup.OnC
 
         @Override
         public int getItemViewType(int position) {
-            int lastpostion=mDatas.size()-1;
-            if (position==0){
+            int lastpostion = mDatas.size() - 1;
+            if (position == 0) {
                 return ITEM_TYPE.CHETOU.ordinal();
-            }else if(position==lastpostion){
+            } else if (position == lastpostion) {
                 return ITEM_TYPE.CHEWEI.ordinal();
-            }else{
+            } else {
                 return ITEM_TYPE.CHEXIANG.ordinal();
             }
         }
@@ -721,7 +741,7 @@ public class CheLiangInfoActivity extends RootActivity implements RadioGroup.OnC
         }
 
     }
-    
+
 
     static class ViewHolder_lishi {
         @Bind(R.id.linechat_lishi)

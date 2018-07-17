@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.CheckBox;
 import android.widget.ExpandableListView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -41,13 +42,15 @@ public class XiangMuXuanZeActivity extends RootActivity {
     LinearLayout lineXiangmuxuanze;
     @Bind(R.id.tv_queding)
     TextView tvQueding;
+    @Bind(R.id.iv_back)
+    ImageView ivBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_xiang_mu_xuan_ze);
         ButterKnife.bind(this);
-       getXiangMu();
+        getXiangMu();
 //        initData(savedInstanceState);
     }
 
@@ -231,16 +234,16 @@ public class XiangMuXuanZeActivity extends RootActivity {
                 @Override
                 public boolean onChildClick(ExpandableListView expandableListView, View view, int groupPosition, int childPosition, long l) {
                     int gourpsSum = adapter.getGroupCount();//组的数量
-                    for(int i = 0; i < gourpsSum; i++) {
+                    for (int i = 0; i < gourpsSum; i++) {
                         int childSum = adapter.getChildrenCount(i);//组中子项的数量
-                        for(int k = 0; k < childSum;k++) {
+                        for (int k = 0; k < childSum; k++) {
                             boolean isLast = false;
-                            if (k == (childSum - 1)){
+                            if (k == (childSum - 1)) {
                                 isLast = true;
                             }
                             CheckBox cBox = (CheckBox) adapter.getChildView(i, k, isLast, null, null).findViewById(R.id.tv_zuoheng);
                             cBox.toggle();//切换CheckBox状态！！！！！！！！！！
-                            boolean itemIsCheck=cBox.isChecked();
+                            boolean itemIsCheck = cBox.isChecked();
 
 
                             ((BaseExpandableListAdapter) adapter).notifyDataSetChanged();//通知数据发生了变化
@@ -252,11 +255,19 @@ public class XiangMuXuanZeActivity extends RootActivity {
             lineXiangmuxuanze.addView(view);
         }
     }
-
-
-    @OnClick(R.id.tv_queding)
-    public void onViewClicked() {
-        startActivity(new Intent(me, MainActivity.class));
-        me.finish();
+    @OnClick({R.id.iv_back, R.id.tv_queding})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.iv_back:
+                me.finish();
+                break;
+            case R.id.tv_queding:
+                startActivity(new Intent(me, MainActivity.class));
+                me.finish();
+                break;
+        }
     }
+
+
+
 }

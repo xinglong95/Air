@@ -230,22 +230,35 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginTop="10dp"
                 >
                 <TextView
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:textSize="13sp"
+                    android:textSize="14sp"
                     android:textColor="@color/liebiaolan"
+                    android:gravity="center"
+                    android:text="车辆"
                     />
                 <TextView
                     android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/liebiaolan"
+                    android:gravity="center"
+                    android:text="空调"
+                    />
                 <TextView
                     android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/liebiaolan"
+                    android:gravity="center"
+                    android:text="故障"
+                    />
             </LinearLayout>
             <ListView
                 android:id="@+id/lv_guzhangliebiao"

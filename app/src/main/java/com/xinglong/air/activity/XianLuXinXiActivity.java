@@ -1,8 +1,10 @@
 package com.xinglong.air.activity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.citzx.cslibrary.net.RequestCallBack;
@@ -28,6 +30,8 @@ public class XianLuXinXiActivity extends RootActivity {
     Button btnSousuo;
     @Bind(R.id.lv_xianluxinxi)
     ListView lvXianluxinxi;
+    @Bind(R.id.iv_back)
+    ImageView ivBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,20 +40,23 @@ public class XianLuXinXiActivity extends RootActivity {
         initData();
         ButterKnife.bind(this);
     }
-    private void initData(){
+
+    private void initData() {
         getXiangMu();
     }
-    private void getXiangMu(){
-        RequestParams params=new RequestParams(APIConfig.postlogin);
+
+    private void getXiangMu() {
+        RequestParams params = new RequestParams(APIConfig.postlogin);
         params.setMethod(HttpMethod.GET);
-        params.addParameter("GetProjectInfo",true);
+        params.addParameter("GetProjectInfo", true);
         XutilHttpHelp.getInstance().BaseInfoHttp(params, me, new RequestCallBack<XiangMuXuanZeBean>() {
             @Override
             public void onSuccess(XiangMuXuanZeBean result) {
-                if (null!=result.getData()){
+                if (null != result.getData()) {
 //                    setText(result);
                 }
             }
+
             @Override
             public void onError(Exception error, String msg) {
                 ToastUtil.showShort("登录失败");
@@ -57,8 +64,15 @@ public class XianLuXinXiActivity extends RootActivity {
             }
         });
     }
-    @OnClick(R.id.btn_sousuo)
-    public void onViewClicked() {
 
+    @OnClick({R.id.iv_back, R.id.btn_sousuo})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.iv_back:
+                me.finish();
+                break;
+            case R.id.btn_sousuo:
+                break;
+        }
     }
 }
