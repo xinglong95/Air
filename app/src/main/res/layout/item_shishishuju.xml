@@ -32,7 +32,7 @@
                 android:drawablePadding="5dp"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:textColor="#328FC1"
+                android:textColor="@color/biaotilan"
                 android:textSize="12sp"
                 />
         </LinearLayout>
@@ -58,7 +58,7 @@
                 android:drawablePadding="5dp"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:textColor="#328FC1"
+                android:textColor="@color/biaotilan"
                 android:textSize="12sp"
                 />
         </LinearLayout>
@@ -91,7 +91,7 @@
                 android:drawablePadding="5dp"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:textColor="#328FC1"
+                android:textColor="@color/biaotilan"
                 android:textSize="12sp"
                 />
         </LinearLayout>
@@ -117,7 +117,7 @@
                 android:drawablePadding="5dp"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:textColor="#328FC1"
+                android:textColor="@color/biaotilan"
                 android:textSize="12sp"
                 />
         </LinearLayout>
@@ -150,7 +150,7 @@
                 android:drawablePadding="5dp"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:textColor="#328FC1"
+                android:textColor="@color/biaotilan"
                 android:textSize="12sp"
                 />
         </LinearLayout>
@@ -176,7 +176,7 @@
                 android:drawablePadding="5dp"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:textColor="#328FC1"
+                android:textColor="@color/biaotilan"
                 android:textSize="12sp"
                 />
         </LinearLayout>
@@ -209,7 +209,7 @@
                 android:drawablePadding="5dp"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:textColor="#328FC1"
+                android:textColor="@color/biaotilan"
                 android:textSize="12sp"
                 />
         </LinearLayout>
@@ -235,7 +235,7 @@
                 android:drawablePadding="5dp"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:textColor="#328FC1"
+                android:textColor="@color/biaotilan"
                 android:textSize="12sp"
                 />
         </LinearLayout>
