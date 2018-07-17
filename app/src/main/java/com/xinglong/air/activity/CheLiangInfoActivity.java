@@ -61,7 +61,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * 第二次提交
+ * 第三次提交
  */
 public class CheLiangInfoActivity extends RootActivity implements RadioGroup.OnCheckedChangeListener {
 
@@ -292,9 +292,9 @@ public class CheLiangInfoActivity extends RootActivity implements RadioGroup.OnC
 
     private void initLiShiData() {
         chartDatasBeans = new ArrayList<>();
-        for (int i = 1; i < 10; i++) {
+        for (int i = 1; i < 20; i++) {
             ChartDatasBean bean = new ChartDatasBean();
-            bean.setDate("05-0" + i);
+            bean.setDate("05-" + i);
             bean.setWendu(i * i);
             chartDatasBeans.add(bean);
         }
