@@ -268,8 +268,6 @@ public class CheLiangInfoActivity extends RootActivity implements RadioGroup.OnC
                     break;
             }
         }
-
-
     }
 
     KongTiaoShiShiBean.DataBean beanall = new KongTiaoShiShiBean.DataBean();
@@ -297,7 +295,7 @@ public class CheLiangInfoActivity extends RootActivity implements RadioGroup.OnC
 
     private void initLiShiData() {
         chartDatasBeans = new ArrayList<>();
-        for (int i = 1; i < 20; i++) {
+        for (int i = 1; i < 100; i++) {
             ChartDatasBean bean = new ChartDatasBean();
             bean.setDate("05-" + i);
             bean.setWendu(i * i);
